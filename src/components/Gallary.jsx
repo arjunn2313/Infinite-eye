@@ -10,9 +10,9 @@ import speaker from "../assets/speaker.png";
 import desk from "../assets/desk.png";
 import mod from "../assets/mod.png";
 
-const Gallery = () => {
+const Gallery = ({id}) => {
   return (
-    <div className="bg-white py-16 px-6 sm:px-12 lg:px-24 h-full">
+    <div id={id} className="bg-white py-16 px-6 sm:px-12 lg:px-24 h-full">
       <div className="max-w-7xl mx-auto h-full">
         {/* Section Title */}
         <div className="text-center">

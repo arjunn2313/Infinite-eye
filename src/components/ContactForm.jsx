@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import emailjs from "emailjs-com";
 
-const ContactForm = () => {
+const ContactForm = ({id}) => {
   const form = useRef();
   const {
     register,
@@ -31,7 +31,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex flex-col max-w-7xl mx-auto  py-16 px-6 sm:px-12   gap-12 md:flex-row md:items-start ">
+    <div id={id} className="  flex flex-col max-w-7xl mx-auto  py-28 px-6 sm:px-12   gap-12 md:flex-row md:items-start ">
       {/* Left Section */}
       <div className="w-full md:w-1/2 space-y-6">
         <h2 className="text-3xl md:text-5xl font-bold text-secondary">

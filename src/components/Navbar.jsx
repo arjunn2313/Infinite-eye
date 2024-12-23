@@ -1,114 +1,91 @@
 import React, { useState } from "react";
+import { Link } from "react-scroll";
 import LOGO from "../assets/logo.png";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("Home");
-
-  const links = [
-    { name: "Home", href: "#" },
-    { name: "About", href: "#" },
-    { name: "Gallary", href: "#" },
-    { name: "FAQ's", href: "#" },
-    { name: "Contact", href: "#" },
-  ];
-
-  const primaryColor = "text-primary";
-  const secondaryColor = "text-secondary";
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for mobile menu toggle
+  const sectionId = ["home", "about", "gallery", "faqs", "contact"];
 
   return (
-    <nav className="bg-white">
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-        <div className="relative flex items-center justify-between h-20 ">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <button
-              type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              <span className="sr-only">Open main menu</span>
-              {!isOpen ? (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              )}
-            </button>
-          </div>
-          <div className="flex-1 flex items-center justify-center sm:items-center sm:justify-between  ">
-            <div className="flex-shrink-0">
-              <img src={LOGO} alt="logo" className="w-full h-16" />
-            </div>
-            <div className="hidden sm:block sm:ml-6">
-              <div className="flex space-x-4">
-                {links.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setActiveLink(link.name)}
-                    className={`px-2 py-1  text-sm font-medium ${
-                      activeLink === link.name
-                        ? `${primaryColor} border-b-2 border-primary `
-                        : secondaryColor
-                    }`}
-                  >
-                    {link.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
+    <nav className="px-8 py-1 bg-white shadow-md fixed top-0 w-full z-50">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* Logo */}
+        <div className="flex items-center">
+          <Link to="home">
+          <img src={LOGO} alt="logo" className="w-full h-16 py-1 cursor-pointer" />
+          </Link>
         </div>
-      </div>
 
-      {/* Mobile menu */}
-      {isOpen && (
-        <div className="sm:hidden" id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {links.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setActiveLink(link.name)}
-                className={`block   px-2 py-2 rounded-md text-lg font-medium ${
-                  activeLink === link.name ? secondaryColor : primaryColor
-                }`}
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
+        {/* Hamburger Menu for Mobile */}
+        <div
+          className="lg:hidden cursor-pointer"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-8 w-8 text-teal-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d={
+                isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
+              }
+            />
+          </svg>
         </div>
-      )}
+
+        {/* Desktop Menu */}
+        <ul className="hidden lg:flex space-x-8 text-md text-secondary font-medium ">
+          {["Home", "About Us", "Gallery", "FAQs", "Contact"].map(
+            (item, index) => (
+              <li key={index} className="cursor-pointer">
+                <Link
+                  to={sectionId[index]}
+                  smooth={true}
+                  duration={50}
+                  spy={true}
+                  offset={-64}
+                  activeClass="text-primary border-b-2 border-primary"
+                  className="hover:text-primary transition-colors duration-300"
+                >
+                  {item}
+                </Link>
+              </li>
+            )
+          )}
+        </ul>
+
+        {/* Mobile Menu */}
+        <ul
+          className={`${
+            isMenuOpen ? "block" : "hidden"
+          } absolute top-16 left-0 w-full bg-white shadow-md text-center lg:hidden`}
+        >
+          {["Home", "About Us", "Gallery", "FAQs", "Contact"].map(
+            (item, index) => (
+              <li key={index} className="py-2 border-b border-gray-200">
+                <Link
+                  to={sectionId[index]}
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  offset={-64}
+                  activeClass="text-orange-500  "
+                  className="text-secondary hover:text-primary transition-colors duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item}
+                </Link>
+              </li>
+            )
+          )}
+        </ul>
+      </div>
     </nav>
   );
 };

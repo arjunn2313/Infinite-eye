@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
-const FAQ = () => {
+const FAQ = ({id}) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
@@ -16,7 +16,7 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="bg-white py-16 px-6 sm:px-12 lg:px-24">
+    <div id={id} className="bg-white py-16 px-6 sm:px-12 lg:px-24">
       <div className="max-w-4xl mx-auto">
         {/* Section Title */}
         <div className="text-center mb-8">

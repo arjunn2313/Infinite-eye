@@ -1,9 +1,9 @@
 import React from "react";
 import AboutImg from "../assets/aboutus.png";
 
-const AboutUs = () => {
+const AboutUs = ({id}) => {
   return (
-    <div className="bg-white py-16 px-6 sm:px-12 lg:px-24">
+    <div id={id} className="bg-white py-16 px-6 sm:px-12 lg:px-24  ">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <div className="text-center">

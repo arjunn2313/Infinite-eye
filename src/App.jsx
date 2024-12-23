@@ -1,27 +1,19 @@
-import AboutUs from "./components/AboutUs";
-import ContactSection from "./components/ContactForm";
-import FAQ from "./components/FAQ";
-import Footer from "./components/Footer";
-import Gallery from "./components/Gallary";
-import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import Testimonials from "./components/Testimonial";
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <>
-     <Navbar/>
-     <Hero/>
-     <AboutUs/>
-     <Gallery/>
-     <FAQ/>
-     <Testimonials/>
-     <ContactSection/>
-     <Footer/>
-    </>
+    <div className="App">
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

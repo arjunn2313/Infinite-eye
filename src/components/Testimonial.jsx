@@ -45,7 +45,7 @@ const testimonialData = [
   },
 ];
 
-const Testimonials = () => {
+const Testimonials = ({id}) => {
   const sliderRef = React.useRef(null);
 
   const settings = {
@@ -75,7 +75,7 @@ const Testimonials = () => {
   const goToPrevious = () => sliderRef.current.slickPrev();
 
   return (
-    <div className="py-16 max-w-7xl mx-auto px-6">
+    <div className="py-16 max-w-7xl mx-auto px-6" id={id}>
       {/* Heading */}
       <div className="text-center mb-8">
         <h2 className="text-4xl font-bold text-secondary">Testimonials</h2>
