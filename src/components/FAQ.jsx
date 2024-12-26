@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
-const FAQ = ({id}) => {
+const FAQ = ({ id }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
@@ -17,21 +17,23 @@ const FAQ = ({id}) => {
 
   return (
     <div id={id} className="bg-white py-16 px-6 sm:px-12 lg:px-24">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Section Title */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-primary">
-            Frequently <span className="text-secondary">Asked Questions</span>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-secondary">
+            <span className="text-primary"> F</span> requently{" "}
+            <span className="text-primary">A</span>sked{" "}
+            <span className="text-primary">Q</span>uestions
           </h2>
-          <div className="w-16 h-1 bg-primary  mx-auto mt-2 rounded-full"></div>
+          <div className="w-24 h-1 bg-primary  mx-auto mt-2 rounded-full"></div>
         </div>
 
         {/* FAQ Items */}
-        <div className="space-y-5" >
+        <div className="space-y-10">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className=" p-2 rounded-lg shadow-md  overflow-hidden"
+              className=" p-2 py-4 rounded-lg shadow-md  overflow-hidden"
               style={{
                 boxShadow: "0 2px 5px rgba(0, 123, 255, 0.15)",
               }}
@@ -40,13 +42,13 @@ const FAQ = ({id}) => {
                 onClick={() => toggleAccordion(index)}
                 className="w-full flex justify-between items-center px-4 py-3 text-left   text-secondary font-normal focus:outline-none"
               >
-                <span className="font-normal text-md ">{faq}</span>
+                <span className="font-normal text-lg ">{faq}</span>
                 <span
                   className={`transition-transform transform p-1 rounded-md bg-primary ${
                     activeIndex === index ? "rotate-180" : "rotate-0"
                   } text-white`}
                 >
-              <IoIosArrowDown size={20}/> 
+                  <IoIosArrowDown size={20} />
                 </span>
               </button>
               {activeIndex === index && (

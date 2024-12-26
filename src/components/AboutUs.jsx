@@ -8,7 +8,7 @@ const AboutUs = ({id}) => {
         {/* Section Title */}
         <div className="text-center">
           <h2 className="text-3xl font-bold text-secondary">About Us</h2>
-          <div className="w-16 h-1 bg-primary mx-auto mt-2 rounded-full"></div>
+          <div className="w-20 h-1 bg-primary mx-auto mt-2 rounded-full"></div>
         </div>
 
         {/* Content */}

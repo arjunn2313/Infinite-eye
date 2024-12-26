@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import LOGO from "../assets/logo.png";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for mobile menu toggle
+  const [isMenuOpen, setIsMenuOpen] = useState(false);  
   const sectionId = ["home", "about", "gallery", "faqs", "contact"];
 
   return (
@@ -12,7 +12,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center">
           <Link to="home">
-          <img src={LOGO} alt="logo" className="w-full h-16 py-1 cursor-pointer" />
+          <img src={LOGO} alt="logo" className="w-full h-full   cursor-pointer" />
           </Link>
         </div>
 
@@ -40,7 +40,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden lg:flex space-x-8 text-md text-secondary font-medium ">
+        <ul className="hidden lg:flex space-x-8 text-md text-secondary   ">
           {["Home", "About Us", "Gallery", "FAQs", "Contact"].map(
             (item, index) => (
               <li key={index} className="cursor-pointer">

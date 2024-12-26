@@ -10,15 +10,16 @@ import Footer from "../components/Footer";
 export default function HomePage() {
   return (
     <>
+    <section className="pt-16 lg:pt-20">
       <Hero id="home"  />
-
+      </section>
       <AboutUs id="about" />
 
       <Gallery id="gallery" />
       <FAQ id="faqs" />
       <Testimonials id="testimonials" />
       <ContactForm id="contact" className="h-screen" />
-      <Footer id="footer" />
+      <Footer />
     </>
   );
 }

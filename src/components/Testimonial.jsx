@@ -79,7 +79,7 @@ const Testimonials = ({id}) => {
       {/* Heading */}
       <div className="text-center mb-8">
         <h2 className="text-4xl font-bold text-secondary">Testimonials</h2>
-        <div className="w-16 h-1 mx-auto bg-primary my-4 rounded-full"></div>
+        <div className="w-20 h-1 mx-auto bg-primary my-4 rounded-full"></div>
       </div>
 
       {/* Custom Navigation */}
