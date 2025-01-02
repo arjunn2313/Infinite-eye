@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import emailjs from "emailjs-com";
+import toast from "react-hot-toast";
 
 const ContactForm = ({id}) => {
   const form = useRef();
@@ -12,6 +13,8 @@ const ContactForm = ({id}) => {
   } = useForm();
 
   const onSubmit = (data) => {
+    const loadingToast = toast.loading("Sending your message...");
+    
     emailjs
       .sendForm(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
@@ -21,11 +24,13 @@ const ContactForm = ({id}) => {
       )
       .then(
         () => {
-          alert("Message sent successfully!");
+          toast.dismiss(loadingToast);
+          toast.success("Message sent successfully!");
         },
         (error) => {
+          toast.dismiss(loadingToast);
           console.error("Error sending email:", error);
-          alert("Failed to send the message. Please try again later.");
+          toast.error("Failed to send the message. Please try again later.");
         }
       );
   };
