@@ -33,7 +33,7 @@ const ContactForm = ({id}) => {
   return (
     <div id={id} className="  flex flex-col max-w-7xl mx-auto  py-28 px-6 sm:px-12     md:flex-row md:items-start ">
       {/* Left Section */}
-      <div className="w-full md:w-1/2 space-y-6  ">
+      <div className="w-full md:w-[40%] space-y-6  ">
         <h2 className="text-3xl md:text-4xl font-bold text-secondary">
           Please Get In Touch
         </h2>
@@ -50,7 +50,7 @@ const ContactForm = ({id}) => {
                 Office Address
               </h4>
               <p className="text-gray-700">
-                390, JoeDaniel Street, Vettunimadam, Nagercoil, 629003
+              200/6/15A , III Cross Street, Ponnappa Nadar Colony, Ramanputhur, Nagercoil - 629004
               </p>
             </div>
           </div>
@@ -60,7 +60,7 @@ const ContactForm = ({id}) => {
             <FaEnvelope className="text-primary text-2xl" />
             <div>
               <h4 className="text-xl font-semibold text-secondary">Email Us</h4>
-              <p className="text-gray-700">infinityeye@gmail.com</p>
+              <p className="text-gray-700">infinityeyengl@gmail.com</p>
             </div>
           </div>
 
@@ -69,14 +69,14 @@ const ContactForm = ({id}) => {
             <FaPhoneAlt className="text-primary text-2xl" />
             <div>
               <h4 className="text-xl font-semibold text-secondary">Call Us</h4>
-              <p className="text-gray-700">+91 90876 54321</p>
+              <p className="text-gray-700">+91 99440 46496</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Right Section */}
-      <div className="w-full md:w-1/2  ">
+      <div className="w-full md:w-[60%]  ">
         <form
           ref={form}
           onSubmit={handleSubmit(onSubmit)}

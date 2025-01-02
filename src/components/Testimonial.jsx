@@ -3,49 +3,37 @@ import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import eye from "../assets/icon.png";
 import coma from "../assets/coma.png";
-import { FaArrowLeftLong, FaArrowRightLong  } from "react-icons/fa6";
+import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 // Testimonial Data
 const testimonialData = [
   {
     id: 1,
-    name: "S.V. Snacks",
+    name: "ANU",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar id quam vel volutpat. Aliquam eu augue eu purus tempor tempus vitae ut lectus.",
+      "Infinity Eye is my go-to electronics store! They have a wide range of products, excellent customer service, and competitive prices. Highly recommend.",
   },
   {
     id: 2,
-    name: "Shree Textiles",
+    name: "Ajay",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar id quam vel volutpat. Aliquam eu augue eu purus tempor tempus vitae ut lectus.",
+      "Bought a laptop here last week, and the staff was very helpful in guiding me through the options. Great experience overall.",
   },
   {
     id: 3,
-    name: "GreenTech Solutions",
+    name: "Abin",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar id quam vel volutpat. Aliquam eu augue eu purus tempor tempus vitae ut lectus.",
+      "Great store with helpful staff. I’ve bought several electronics here and always had a good experience.",
   },
   {
     id: 4,
-    name: "Urban Builders",
+    name: "Gokul",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar id quam vel volutpat. Aliquam eu augue eu purus tempor tempus vitae ut lectus.",
-  },
-  {
-    id: 5,
-    name: "Elite Academy",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar id quam vel volutpat. Aliquam eu augue eu purus tempor tempus vitae ut lectus.",
-  },
-  {
-    id: 6,
-    name: "Royal Bakers",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar id quam vel volutpat. Aliquam eu augue eu purus tempor tempus vitae ut lectus.",
+      "The best place to buy electronics in town! I’m always impressed by their product range and quality.",
   },
 ];
 
-const Testimonials = ({id}) => {
+const Testimonials = ({ id }) => {
   const sliderRef = React.useRef(null);
 
   const settings = {
@@ -103,32 +91,13 @@ const Testimonials = ({id}) => {
       {/* Slider */}
       <div className="mx-auto px-4">
         <Slider ref={sliderRef} {...settings}>
-          <div key={testimonialData[0].id} className="p-4">
-            <div
-              className="bg-white rounded-lg shadow-lg p-6 flex flex-col h-full transition-transform transform hover:shadow-xl hover:-translate-y-1"
-              style={{
-                boxShadow: "0 2px 5px rgba(0, 123, 255, 0.15)",
-              }}
-            >
-              <div className="flex items-center mb-4">
-                <img src={eye} alt="eye" className="mr-3" />
-                <h3 className="text-lg font-medium text-secondary">
-                  {testimonialData[0].name}
-                </h3>
-                <img src={coma} alt="coma" className="ml-auto" />
-              </div>
-              <p className="text-content flex-grow">
-                {testimonialData[0].content}
-              </p>
-            </div>
-          </div>
-
-          {testimonialData.slice(1).map((testimonial) => (
+          {testimonialData.map((testimonial) => (
             <div key={testimonial.id} className="p-4">
               <div
                 className="bg-white rounded-lg shadow-lg p-6 flex flex-col h-full transition-transform transform hover:shadow-xl hover:-translate-y-1"
                 style={{
                   boxShadow: "0 2px 5px rgba(0, 123, 255, 0.15)",
+                  minHeight: "250px", // Ensures all cards have the same height
                 }}
               >
                 <div className="flex items-center mb-4">

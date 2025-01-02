@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import BackgroundImage from "../assets/camera.png";
+import BackgroundImage from "../assets/hero.jpg";
 
 const Hero = ({ id }) => {
   const ref = useRef(null);
@@ -14,7 +14,7 @@ const Hero = ({ id }) => {
       style={{ backgroundImage: `url(${BackgroundImage})` }}
     >
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0C667A] via-transparent to-black"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#426F6A] via-transparent to-black"></div>
 
       {/* Content with Animation */}
       <div className="relative text-start z-10 max-w-7xl mx-auto h-full flex flex-col justify-center text-white px-4">
@@ -26,27 +26,28 @@ const Hero = ({ id }) => {
         >
           {/* Animated Heading */}
           <motion.h1
-            className="text-2xl md:text-3xl font-bold mb-4 leading-relaxed md:leading-relaxed"
+            className="text-2xl md:text-4xl font-bold mb-4 leading-relaxed md:leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Infinity Eye: Shaping the Future of Electronics.
           </motion.h1>
 
           {/* Animated Paragraph */}
           <motion.p
-            className="text-base md:text-md leading-relaxed md:leading-loose"
+            className="text-base md:text-md leading-relaxed md:leading-loose font-medium"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-            pulvinar id quam vel volutpat. Aliquam eu augue eu purus tempor
-            tempus vitae ut lectus. Phasellus rhoncus quam nisl, ornare
-            elementum nisl rhoncus eget. Donec condimentum non elit auctor
-            condimentum. Fusce ornare elit nec auctor accumsan. Quisque interdum
-            tellus eget dui interdum fermentum in at metus.
+            Infinity Eye is your gateway to cutting-edge technology and
+            innovation in the world of electronics. We are dedicated to
+            providing advanced, reliable, and user-friendly electronic solutions
+            that enhance everyday life. With a focus on quality, performance,
+            and futuristic designs, Infinity Eye is here to redefine the way you
+            experience technology. Join us in shaping a smarter, more connected
+            future.
           </motion.p>
         </motion.div>
       </div>
