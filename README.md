@@ -1,12 +1,39 @@
-<<<<<<< HEAD
-# React + Vite
+# Infinite Eye Project Documentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Technologies Used](#technologies-used)
+3. [Project Setup](#project-setup)
+4. [Folder Structure](#folder-structure)
+5. [Features](#features)
+6. [How to Contribute](#how-to-contribute)
+7. [License](#license)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-=======
-# infinity-eye-website
->>>>>>> 284aa3616bf9c0b1b90e8f1453c0c730ed5ab0de
+## Introduction
+The **Infinite Eye Project** is designed to [briefly describe the purpose and goals of your project, e.g., "provide advanced visual solutions for analytics and monitoring."]
+
+---
+
+## Technologies Used
+- **Frontend**: [React.js, Tailwind CSS (list what applies)]
+- **Version Control**: Git and GitHub
+- **Other Tools**: [Include any additional libraries, frameworks, or tools like Framer Motion, React Icons, etc.]
+
+---
+
+## Project Setup
+
+### Prerequisites
+Ensure you have the following installed:
+- Node.js
+- Git
+- Any package manager (e.g., npm or yarn)
+
+### Clone the Repository
+ 
+git clone https://github.com/Spangles-Infotech/infinity-eye-website.git
+npm install
+npm run dev
+
