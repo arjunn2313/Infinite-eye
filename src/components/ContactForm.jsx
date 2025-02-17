@@ -18,12 +18,12 @@ const ContactForm = ({id}) => {
     emailjs
       .sendForm(
         // process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        "service_mg54kyf",
+       
         // process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        "template_5f9ugxm",
+        
         form.current,
         // process.env.REACT_APP_EMAILJS_USER_ID
-        "Lk0fYiZyYuEwUTMiO"
+        
       )
       .then(
         () => {
